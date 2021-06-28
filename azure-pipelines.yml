@@ -17,6 +17,12 @@ stages:
     pool:
       vmImage: ubuntu-latest
     steps:
+
+    - task: DownloadSecureFile@1
+      name: 'settings.xml'
+      inputs:
+        secureFile: 'settings.xml'
+
     - task: Cache@2
       displayName: Cache Maven build from local repo
       inputs:
@@ -27,9 +33,10 @@ stages:
           maven | "$(Agent.OS)"
           maven
     - task: Maven@3
+      displayName: Package Application
       inputs:
-        mavenPomFile: 'pom.xml'
-        mavenOptions: '-Xmx3072m'
+        mavenPomFile: '$(Pipeline.Workspace)/s/$(Build.Repository.Name)/pom.xml'
+        mavenOptions: '-Xmx3072m $(MAVEN_OPTS)'
         javaHomeOption: 'JDKVersion'
         jdkVersionOption: '1.8'
         jdkArchitectureOption: 'x64'
