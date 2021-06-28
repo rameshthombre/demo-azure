@@ -19,7 +19,6 @@ stages:
     steps:
 
     - task: DownloadSecureFile@1
-      name: 'settings.xml'
       inputs:
         secureFile: 'settings.xml'
 
