@@ -27,3 +27,12 @@ stages:
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
         goals: 'package'
+    - task: Cache@2
+      displayName: Cache Maven build from local repo
+      inputs:
+        key: maven | "$(Agent.OS)" | "$(Pipeline.Workspace)/s/$(Build.Repository.Name)/pom.xml"
+        path: $(MAVEN_CACHE_FOLDER)
+        cacheHitVar: CacheRestored
+        restoreKeys: >
+          maven | "$(Agent.OS)"
+          maven
