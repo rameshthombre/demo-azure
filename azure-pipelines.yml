@@ -38,6 +38,8 @@ stages:
           cp $(credentialsFile.secureFilePath) ~/.anypoint/
           mkdir ~/.m2
           cp $(settingsxml.secureFilePath) ~/.m2/
+          export ANYPOINT_PROFILE=$(environment)
+
     - task: Cache@2
       displayName: Cache Maven build from local repo
       inputs:
