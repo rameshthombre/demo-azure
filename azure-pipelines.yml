@@ -24,10 +24,10 @@ stages:
       name: settingsxml
       inputs:
         secureFile: 'settings.xml'
-    - task: DownloadSecureFile@1
-      name: credentialsFile
-      inputs:
-        secureFile: 'credentials.json'
+    # - task: DownloadSecureFile@1
+    #   name: credentialsFile
+    #   inputs:
+    #     secureFile: 'credentials.json'
 
     - task: Cache@2
       displayName: Cache Maven build from local repo
