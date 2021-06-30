@@ -59,4 +59,4 @@ stages:
         jdkArchitectureOption: 'x64'
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
-        goals: 'clean deploy -DmuleDeploy -Dusername=${username} -Dpassword=${password}'
+        goals: 'clean deploy -DmuleDeploy -Dusername=$(username) -Dpassword=$(password)'
