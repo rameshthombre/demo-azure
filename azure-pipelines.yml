@@ -66,6 +66,4 @@ stages:
         script: |
           
           anypoint-cli runtime-mgr cloudhub-application deploy --ANYPOINT_USERNAME "$(username)" --ANYPOINT_PASSWORD "$(password)"
-          --runtime "$(runtime)" --environment "$(environment)" --workers "$(workers)"   
-
-    
+          --runtime "$(runtime)" --environment "$(environment)" --workers "$(workers)"
