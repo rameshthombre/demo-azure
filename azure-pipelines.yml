@@ -64,4 +64,4 @@ stages:
       inputs:
         targetType: inline
         script: |
-          anypoint-cli runtime-mgr cloudhub-application deploy --runtime "$(runtime)" --environment "$(environment)" --workers "$(workers)" --workerSize "$(workerSize)" --applicationName "$(applicationName)"
+          anypoint-cli runtime-mgr cloudhub-application deploy --runtime "$(runtime)" --environment "$(environment)" --workers "$(workers)"
