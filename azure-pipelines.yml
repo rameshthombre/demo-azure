@@ -64,6 +64,8 @@ stages:
       inputs:
         targetType: inline
         script: |
+          export ANYPOINT_USERNAME="$(username)"
+          export ANYPOINT_PASSWORD="$(password)"
           anypoint-cli runtime-mgr cloudhub-application deploy --runtime "$(runtime)" --environment "$(environment)" --workers "$(workers)" --workerSize "$(workerSize)" --applicationName "$(applicationName)" 
 
     
